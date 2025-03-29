@@ -3,7 +3,7 @@ from app.services.whisper_service import transcribe_audio
 
 router = APIRouter()
 
-@router.post("/transcribe")
+@router.post("/transcribe/")
 async def transcribe(file: UploadFile = File(...)):
     """
     Receives an audio file and returns transcribed text
