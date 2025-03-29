@@ -1,0 +1,27 @@
+/* LandingPage.css */
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f0f8ff;
+  }
+  
+  .get-started-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    border: none;
+    background-color: #0FA3B1;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .get-started-button:hover {
+    background-color: #0d8b9f;
+  }
+  

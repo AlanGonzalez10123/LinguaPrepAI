@@ -1,11 +1,11 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', 'Helvetica', 'Arial', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #0FA3B1; /* Primary background color */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,28 +13,87 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #B5E2FA; /* Light and inviting background */
+  color: #213547; /* Text color for readability */
+  font-family: inherit;
 }
 
+/* Utility container class */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styling */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #213547; /* Consistent header color */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  color: #F9F7F3; /* Header text color */
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.app-header h1 {
+  font-size: 1.8rem;  /* Ensure this matches your desired header text size */
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #F5F5F5; /* Set to a lighter color for better contrast */
+}
+
+
+.app-header nav a {
+  margin-left: 20px;
+  color: inherit; /* Inherit color for consistency */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.app-header nav a:hover {
+  color: #FFCD00; /* Highlight color */
+}
+
+/* Global link styles */
+a {
+  font-weight: 500;
+  color: #FF9F1C; /* Link color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #EDDEA4; /* Link hover color */
+}
+
+/* Typography */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2.5em;
+  line-height: 1.2;
+  margin-top: 20px;
+  color: #041829c4; /* Main heading color */
 }
 
+h2 {
+  font-size: 2em;
+  margin-top: 15px;
+  color: #213547; /* Secondary heading color */
+}
+
+/* Button styling */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -42,27 +101,75 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #213547; /* Button background */
+  color: #F9F7F3;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: #284c08; /* Button hover border */
+  background-color: #caf690; /* Button hover background */
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1em;
+  color: #213547;
+}
+
+table thead th {
+  background-color: #0FA3B1;
+  color: #F9F7F3;
+  padding: 10px;
+  text-align: left;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+table tbody td {
+  padding: 10px;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #f2f2f2;
+}
+
+table tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Smooth page transitions */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Light theme adjustments */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
+    color: #213547;
   }
 }
+
+

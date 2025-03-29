@@ -1,0 +1,73 @@
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #213547; /* Cool deep teal for the header */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    color: #FFFFFF; /* Use pure white for maximum contrast */
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.app-header.scrolled {
+    background-color: #0FA3B1; /* Light teal when the header is scrolled */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.app-header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700; /* Emphasized weight */
+    letter-spacing: 0.5px; /* Slight letter spacing for readability */
+}
+
+.app-header nav {
+    display: flex;
+    gap: 20px; /* Use CSS gap for consistent spacing */
+}
+
+.app-header nav a {
+    margin-left: 20px;
+    color: #FFFFFF; /* Default link color */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease, background-color 0.25s ease;
+    padding: 0.4em 0.8em; /* Add padding for button-like appearance */
+    border-radius: 8px; /* Rounded corners */
+    background-color: transparent; /* Default transparent background */
+}
+
+.app-header nav a:hover {
+    color: #FFCD00; /* Hover color */
+    transform: scale(1.05);
+}
+
+.app-header nav a:focus,
+.app-header nav a:active {
+    outline: none; /* Remove default focus outline */
+    background-color: #0FA3B1; /* Filled background when active */
+    color: #FFFFFF; /* Text color on active */
+    border: 2px solid #0FA3B1; /* Optional: Ensure border matches background */
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .app-header {
+        padding: 0 15px; /* Adjusted padding for smaller screens */
+    }
+
+    .app-header h1 {
+        font-size: 1.4rem; /* Smaller font size on mobile */
+    }
+
+    .app-header nav {
+        gap: 15px; /* Adjusted spacing for mobile view */
+    }
+}
