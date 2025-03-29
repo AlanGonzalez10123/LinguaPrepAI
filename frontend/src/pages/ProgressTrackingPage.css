@@ -1,0 +1,110 @@
+.progress-tracking {
+    padding: 20px;
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: #f9fafb;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-height: 80vh;
+  }
+  
+  .progress-tracking h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  li:hover {
+    background-color: #f0f4f8;
+  }
+  
+  li span {
+    flex-grow: 1;
+  }
+  
+  button {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #0FA3B1;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0d8b9f;
+  }
+  
+  .completed {
+    background-color: #e6ffed;
+    border-color: #b2f5ea;
+  }
+  
+  .completed span {
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  .visual-progress-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Space between the sections */
+    margin-top: 30px;
+  }
+  
+  .calendar-progress-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Space between the title and calendar/progress bar */
+  }
+  
+  .section-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #eef2f3;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .calendar-tile {
+    text-align: center;
+  }
+  
+  .interview-day {
+    background-color: #ffdddd !important;
+  }
+  
+  .practiced-day {
+    background-color: #d0f0c0 !important;
+  }
+  
+  .progress-bar-wrapper {
+    width: 100%;
+    max-width: 350px;
+    margin: 20px 0;
+  }
+  
