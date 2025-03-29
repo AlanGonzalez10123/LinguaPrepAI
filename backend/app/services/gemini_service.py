@@ -22,3 +22,30 @@ def generate_questions() -> str:
     )
 
     return response.text
+
+def analyze_response(question: str, input: str) -> str:
+    """
+    Use Gemini AI to analyze the user's response to the given interview question.
+    """
+    prompt = f'You asked the user this behavioral interview question: {question}. The answer the user gave was: {input}. '\
+            'Analyze their input to the question and give them feeback on their answer. Ensure the feedback includes: ' \
+            '(1) How well they used the STAR method to answer their question' \
+            '(2) Any grammar or speach mistakes they may have made.' \
+            '(3) Does their answer clearly explain the situation, task, action, and result?' \
+            '(4) Did their response directly address the question asked?' \
+            '(5) Did they describe what they DID? As in talking about their experiences and actions over just what happened.' \
+            'make sure your reply IS DIRECTLY TO THE USER, this means your reply should be a dialogue to them.' \
+            'Additionally, for more context, the user is a non-native English speaker. Therefore, you should also ' \
+            'provide feedback on their use of language, including whether they used any wording that is not industry standard,' \
+            ' overly casual, or unclear. Suggest more professional or commonly used alternatives where appropriate.'
+    
+    
+    response = gemini_model.generate_content(
+        contents=[prompt],
+        generation_config=types.GenerationConfig(
+            max_output_tokens=500,
+            temperature=1.0
+    )
+    )
+
+    return response.text
