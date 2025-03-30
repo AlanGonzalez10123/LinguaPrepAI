@@ -43,7 +43,6 @@ def analyze_response(question: str, input: str) -> str:
     response = gemini_model.generate_content(
         contents=[prompt],
         generation_config=types.GenerationConfig(
-            max_output_tokens=500,
             temperature=1.0
     )
     )
