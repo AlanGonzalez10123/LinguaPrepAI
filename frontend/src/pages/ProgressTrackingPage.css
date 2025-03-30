@@ -1,8 +1,9 @@
+/* ProgressTrackingPage.css */
 .progress-tracking {
     padding: 20px;
     max-width: 90%;
     margin: 0 auto;
-    background-color: #f9fafb;
+    background-color: #F9F7F3; /* Light background for the main container */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     min-height: 80vh;
@@ -12,6 +13,7 @@
     text-align: center;
     margin-bottom: 20px;
     font-weight: bold;
+    color: #0FA3B1; /* Contrast with the background */
   }
   
   ul {
@@ -27,7 +29,7 @@
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #fff; /* White background for items */
     transition: background-color 0.3s ease;
   }
   
@@ -37,6 +39,7 @@
   
   li span {
     flex-grow: 1;
+    color: #333; /* Ensure text is readable */
   }
   
   button {
@@ -85,13 +88,37 @@
     text-align: center;
     margin-bottom: 20px;
     padding: 10px;
-    background-color: #eef2f3;
+    background-color: #4fa9ae; /* Use a highlight color for section titles */
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #345790;
+    color: #010505; /* Ensure text is visible */
   }
   
-  .calendar-tile {
-    text-align: center;
+  .react-calendar {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border: none; /* Cleaner look */
+    font-family: Arial, sans-serif;
+  }
+  
+  .react-calendar__navigation button {
+    color: #0FA3B1; /* Color for navigation arrows and month name */
+  }
+  
+  .react-calendar__tile {
+    background: #B5E2FA; /* Light blue for tiles */
+    color: #333; /* Text color */
+    border-radius: 4px;
+    margin: 2px;
+  }
+  
+  .react-calendar__tile--active {
+    background: #F7A072 !important; /* Highlight active days */
+  }
+  
+  .react-calendar__tile--now {
+    background: #ffdddd !important; /* Highlight current day */
   }
   
   .interview-day {
@@ -100,11 +127,5 @@
   
   .practiced-day {
     background-color: #d0f0c0 !important;
-  }
-  
-  .progress-bar-wrapper {
-    width: 100%;
-    max-width: 350px;
-    margin: 20px 0;
   }
   
