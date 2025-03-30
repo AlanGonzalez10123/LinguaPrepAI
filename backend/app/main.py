@@ -1,7 +1,17 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.routes import translate, transcribe, generate_question, analyze
 
 app = FastAPI()
+
+# Allow CORS for specific origins
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Change this to the origin of your frontend app
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Include API routes
 app.include_router(transcribe.router, prefix="/api", tags=["Transcription"])

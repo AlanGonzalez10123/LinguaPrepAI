@@ -7,6 +7,18 @@ const InterviewPage = () => {
   const [question, setQuestion] = useState("");
   const [feedback, setFeedback] = useState("");
 
+  const getInterviewQuestion = async () => {
+    try{
+      const response = await fetch("http://127.0.0.1:8000/api/question");
+      const data = response.json();
+      
+      return data
+
+    }catch(err){
+      console.log("Encountered an error: ", err)
+    }
+  }
+
   useEffect(() => {
     const lang = localStorage.getItem("selectedLanguage") || "English";
     const mockQuestions = {
@@ -14,7 +26,7 @@ const InterviewPage = () => {
       Español: "Háblame de ti.",
       Français: "Parlez-moi de vous.",
     };
-    setQuestion(mockQuestions[lang]);
+    setQuestion(getInterviewQuestion());
   }, []);
 
   const handleFakeTranscript = () => {
