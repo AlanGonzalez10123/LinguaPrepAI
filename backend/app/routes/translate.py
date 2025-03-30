@@ -1,15 +1,15 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Body
 from app.services.deepl_service import translate_text
 
 router = APIRouter()
 
 @router.post("/translate/")
-def translate(text: str, lang: str) -> str:
+def translate(
+    text: str = Body(..., embed=True),
+    lang: str = Body(..., embed=True)
+):
     """
-    Receives a text file and translates it to english
+    Receives text and a target language, translates it, and returns the translation.
     """
-
     translation = translate_text(text, lang)
-
-    return translation
-
+    return {"translation": translation}

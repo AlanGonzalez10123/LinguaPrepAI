@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import translate, transcribe, generate_question, analyze
 
@@ -22,3 +22,10 @@ app.include_router(analyze.router, prefix="/api", tags=["Analyze the user's resp
 @app.get('/')
 def read_root():
     return{"message": "Hello, FastAPI!"}
+
+@app.post('/api/upload')
+async def upload_audio(file: UploadFile = File(...)):
+    with open (f"uploads/{file.filename}", 'wb') as buffer:
+        buffer.write(await file.read())
+
+    return {"filename" : file.filename}
